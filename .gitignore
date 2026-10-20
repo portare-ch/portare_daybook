@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.tar.gz
+.openai/
+.env
+.env.*
+!.env.example
+daybook-backup-*.json

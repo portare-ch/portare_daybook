@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="A little clarity for everything you carry. Tasks, long-term plans, and notes organized around the worlds you define.">
+  <title>Daybook — Your personal space</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#today" aria-label="Daybook home"><span class="brand-mark" aria-hidden="true">d<span>·</span></span><span>daybook<span class="brand-caption">A little space for everything.</span></span></a>
+      <button class="workspace-switch" id="workspace-button"><span class="workspace-avatar">p.</span><span>My personal space<small>Made for your many worlds</small></span><span data-icon="chevron-down"></span></button>
+      <div class="nav-label">YOUR DAY</div>
+      <nav id="main-nav"></nav>
+      <div class="nav-label worlds-label"><span>YOUR WORLDS <span class="worlds-count" id="worlds-count"></span></span><button class="icon-button manage-worlds-button" data-action="manage-worlds" aria-label="Manage worlds" title="Manage worlds"><span data-icon="sliders"></span></button></div>
+      <nav id="area-nav" aria-label="Life areas"></nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note"><span data-icon="sprout"></span><p>You can do anything.<br><strong>Just not all at once.</strong></p></div>
+        <button class="nav-item settings-link" id="settings-button"><span data-icon="sliders"></span><span>Settings & backup</span></button>
+        <div class="profile"><span class="profile-avatar">Y</span><div>Your space<small><span class="status-dot"></span> <span id="save-status">Saved on this device</span></small></div><span class="version">DRAFT 01</span></div>
+      </div>
+    </aside>
+    <button class="sidebar-scrim" id="sidebar-scrim" aria-label="Close navigation" hidden></button>
+    <div class="workspace">
+      <header class="topbar">
+        <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open navigation"><span data-icon="menu"></span></button>
+        <div class="breadcrumb"><span data-icon="home"></span><span>My space</span><span class="slash">/</span><strong id="breadcrumb-title">Today</strong></div>
+        <div class="topbar-actions"><button class="search-trigger" id="search-button"><span data-icon="search"></span><span>Find anything</span><kbd>/</kbd></button><span class="topbar-divider"></span><span class="private-indicator"><span data-icon="lock"></span> Just for you</span></div>
+      </header>
+      <main id="main-content" tabindex="-1"></main>
+      <footer class="page-footer"><span>A little progress is still progress.</span><span>Built around your life <span class="tiny-sun">✳</span></span></footer>
+    </div>
+  </div>
+  <dialog id="editor-dialog" class="editor-dialog"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
